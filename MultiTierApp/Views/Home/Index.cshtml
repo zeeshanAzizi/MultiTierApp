@@ -1,0 +1,27 @@
+﻿@model IEnumerable<CommonAccessLayer.Models.Employees>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<a asp-action="Create" asp-controller="Employee" class="btn btn-outline-danger">Create</a>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Address</th>
+        </tr>
+        @foreach(var emp in Model)
+        {
+            <tr>
+                <td>@emp.Id</td>
+                <td>@emp.Name</td>
+                <td>@emp.Email</td>
+                <td>@emp.Mobile</td>
+                <td>@emp.Address</td>
+            </tr>
+        }
+    </table>
+</div>
